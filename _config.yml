@@ -1,12 +1,11 @@
 title: Blog de Analítica Avanzada
 description: Análisis de Datos con Spark y Big Data
-author: Alejandro De Mendoza Tovar
+author: Maria Fernanda
 baseurl: ""
 url: ""
-
 theme: minima
-
 markdown: kramdown
-
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
