@@ -1,0 +1,24 @@
+---
+layout: default
+title: Inicio
+---
+
+<div class="home">
+  <h1>Últimos Artículos</h1>
+  
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <h2>
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title }}
+          </a>
+        </h2>
+        <p class="post-meta">
+          {{ post.date | date: "%d %b %Y" }}
+        </p>
+        <p>{{ post.excerpt }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
