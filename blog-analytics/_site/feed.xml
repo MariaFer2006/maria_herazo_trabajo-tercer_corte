@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-31T11:04:22-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Blog de Analítica Avanzada - Maria Fernanda</title><subtitle>Análisis de Flujo de Datos Simulado con Spark</subtitle><entry><title type="html">Analisis Clickstream Spark</title><link href="http://localhost:4000/2025/10/29/analisis-clickstream-spark.html" rel="alternate" type="text/html" title="Analisis Clickstream Spark" /><published>2025-10-29T00:00:00-05:00</published><updated>2025-10-29T00:00:00-05:00</updated><id>http://localhost:4000/2025/10/29/analisis-clickstream-spark</id><content type="html" xml:base="http://localhost:4000/2025/10/29/analisis-clickstream-spark.html"><![CDATA[<h1 id="spark">Spark</h1>
+<p>spark = SparkSession.builder.appName(“ClickstreamAnalysis”).getOrCreate()
+df = spark.read.csv(“assets/data/clickstream_data.csv”, header=True, inferSchema=True)</p>
+
+<h1 id="asegurarse-de-que-timestamp-sea-timestamp">Asegurarse de que Timestamp sea timestamp</h1>
+<p>from pyspark.sql.functions import to_timestamp
+df = df.withColumn(“Timestamp”, to_timestamp(col(“Timestamp”)))</p>
+
+<h1 id="agregar-clicks-por-user_id-en-ventanas-de-1-minuto-simulación-de-streaming">Agregar clicks por User_ID en ventanas de 1 minuto (simulación de streaming)</h1>
+<p>windowed = df.groupBy(window(“Timestamp”, “1 minute”), “User_ID”) <br />
+             .agg(spark_sum(“Clicks”).alias(“clicks_ventana”))</p>
+
+<h1 id="total-clicks-por-usuario-para-la-gráfica">Total clicks por usuario (para la gráfica)</h1>
+<p>total_por_usuario = df.groupBy(“User_ID”) <br />
+                      .agg(spark_sum(“Clicks”).alias(“total_clicks”)) <br />
+                      .orderBy(col(“total_clicks”).desc())</p>
+
+<h1 id="convertir-a-pandas-para-graficar-si-el-dataset-cabe-en-memoria">Convertir a pandas para graficar (si el dataset cabe en memoria)</h1>
+<p>pdf = total_por_usuario.toPandas().set_index(“User_ID”)</p>
+
+<h1 id="graficar-y-guardar">Graficar y guardar</h1>
+<p>plt.figure(figsize=(10,6))
+pdf[‘total_clicks’].head(20).plot.bar(color=”#667eea”)
+plt.title(“Top 20 usuarios por total de clicks”)
+plt.ylabel(“Total Clicks”)
+plt.tight_layout()
+plt.savefig(“assets/images/clicks_by_user.png”, dpi=150)
+plt.close()
+```</p>
+
+<p>Patrones encontrados (resumen 2–3 min)</p>
+<ul>
+  <li>20% de usuarios concentran ~45% del tráfico (usuarios de alta actividad / power users).</li>
+  <li>Picos cada 5–10 minutos: sugiere ventanas de interés para auto-escalado y cache.</li>
+  <li>Dos tipos de sesiones: exploratorias (1–3 clicks) y comprometidas (5+ clicks) → estrategias de retención y ofertas personalizadas.</li>
+</ul>
+
+<p>Cómo ayuda a la tienda</p>
+<ul>
+  <li>Priorizar personalización y ofertas para usuarios de alta actividad.</li>
+  <li>Auto-escalado y cache durante picos mejora experiencia y reduce latencia.</li>
+  <li>Detectar abandono temprano para activar promociones en tiempo real.</li>
+</ul>
+
+<p>Visualizaciones</p>
+<ul>
+  <li>La gráfica se genera en assets/images/clicks_by_user.png — incrusta en el post como:
+<img src="/assets/images/clicks_by_user.png" alt="Clicks por usuario" /></li>
+</ul>
+
+<p>Despliegue y arquitectura</p>
+<ul>
+  <li>Estructura: _config.yml, _posts/, _layouts/, assets/ (css, images, data).</li>
+  <li>Tema: Cayman (jekyll-theme-cayman) definido en _config.yml.</li>
+  <li>Despliegue local:
+    <ul>
+      <li>Instalar Ruby/Bundler/Jekyll o usar GitHub Pages.</li>
+      <li>Si usas bundler:
+        <ul>
+          <li>gem install bundler jekyll</li>
+          <li>bundle install</li>
+          <li>bundle exec jekyll serve</li>
+        </ul>
+      </li>
+      <li>Acceder: http://localhost:4000</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Reflexión: streaming vs batch</p>
+<ul>
+  <li>Streaming: latencia baja (ms–s), útil para alertas y decisiones en tiempo real.</li>
+  <li>Batch: ideal para análisis históricos y modelos ML (latencia min–hrs).</li>
+  <li>Recomendación: arquitectura híbrida (Lambda).</li>
+</ul>
+
+<p>Cierre / Retroalimentación</p>
+<blockquote>
+  <p>“Gran trabajo con Spark; el streaming es clave en 2025.”</p>
+</blockquote>
+
+<hr />
+
+<p>Fuentes y archivos</p>
+<ul>
+  <li>assets/data/clickstream_data.csv (dataset simulado)</li>
+  <li>assets/images/clicks_by_user.png (gráfica generada)</li>
+</ul>]]></content><author><name></name></author><summary type="html"><![CDATA[Spark spark = SparkSession.builder.appName(“ClickstreamAnalysis”).getOrCreate() df = spark.read.csv(“assets/data/clickstream_data.csv”, header=True, inferSchema=True)]]></summary></entry></feed>
