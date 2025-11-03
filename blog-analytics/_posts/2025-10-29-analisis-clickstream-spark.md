@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post  # ← Cambiar de "default" a "post"
 title: "Análisis de Flujo de Datos Simulado con Spark"
 date: 2025-10-29
 author: Maria Fernanda Herazo Escobar

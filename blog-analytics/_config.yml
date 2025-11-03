@@ -1,10 +1,30 @@
 title: "Blog de Analítica Avanzada - Maria Fernanda"
 description: "Análisis de Flujo de Datos Simulado con Spark"
 theme: jekyll-theme-cayman
-baseurl: ""
-url: "http://localhost:4000"
+baseurl: "/blog-analytics"  # ← Cambia esto al nombre de tu repositorio
+url: "https://TU-USUARIO.github.io"  # ← Cambia TU-USUARIO por tu username de GitHub
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# Excluir archivos de Python del build
+exclude:
+  - generate_graphs.py
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+```
+
+### **Paso 6: Crear `.gitignore`**
+
+Crea un archivo `.gitignore` en la raíz:
+```
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor/
+*.pyc
+__pycache__/
