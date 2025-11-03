@@ -273,6 +273,6 @@ Este proyecto es de código abierto y está disponible bajo la licencia MIT.
 ## 👤  Autor
 maria Fernanda herazo escobar 
 
-**Alejandro De Mendoza Tovar**
+
 - Curso: Analítica Avanzada 2025
 - Proyecto: Análisis de Clickstream con Spark
