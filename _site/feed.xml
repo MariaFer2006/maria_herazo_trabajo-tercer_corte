@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-10-31T17:41:17-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Blog de Analítica Avanzada - Maria Fernanda</title><subtitle>Análisis de Flujo de Datos Simulado con Spark</subtitle><entry><title type="html">Análisis de Flujo de Datos Simulado con Spark</title><link href="http://localhost:4000/analytics/spark/streaming/2025/10/29/analisis-clickstream-spark.html" rel="alternate" type="text/html" title="Análisis de Flujo de Datos Simulado con Spark" /><published>2025-10-29T00:00:00-05:00</published><updated>2025-10-29T00:00:00-05:00</updated><id>http://localhost:4000/analytics/spark/streaming/2025/10/29/analisis-clickstream-spark</id><content type="html" xml:base="http://localhost:4000/analytics/spark/streaming/2025/10/29/analisis-clickstream-spark.html"><![CDATA[<h1 id="-análisis-de-flujo-de-datos-simulado-con-spark">🔍 Análisis de Flujo de Datos Simulado con Spark</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/maria_herazo_trabajo-tercer_corte/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/maria_herazo_trabajo-tercer_corte/" rel="alternate" type="text/html" /><updated>2025-11-03T12:30:43-05:00</updated><id>http://localhost:4000/maria_herazo_trabajo-tercer_corte/feed.xml</id><title type="html">Blog de Analítica Avanzada - Maria Fernanda</title><subtitle>Análisis de Flujo de Datos Simulado con Spark</subtitle><entry><title type="html">Análisis de Flujo de Datos Simulado con Spark</title><link href="http://localhost:4000/maria_herazo_trabajo-tercer_corte/analytics/spark/streaming/2025/10/29/analisis-clickstream-spark.html" rel="alternate" type="text/html" title="Análisis de Flujo de Datos Simulado con Spark" /><published>2025-10-29T00:00:00-05:00</published><updated>2025-10-29T00:00:00-05:00</updated><id>http://localhost:4000/maria_herazo_trabajo-tercer_corte/analytics/spark/streaming/2025/10/29/analisis-clickstream-spark</id><content type="html" xml:base="http://localhost:4000/maria_herazo_trabajo-tercer_corte/analytics/spark/streaming/2025/10/29/analisis-clickstream-spark.html"><![CDATA[<h1 id="-análisis-de-flujo-de-datos-simulado-con-spark">🔍 Análisis de Flujo de Datos Simulado con Spark</h1>
 
 <h2 id="escenario-empresarial">Escenario Empresarial</h2>
 
@@ -93,13 +93,13 @@
 
 <h3 id="1-top-15-usuarios-por-actividad">1. Top 15 Usuarios por Actividad</h3>
 
-<p><img src="/assets/images/top_users_chart.png" alt="Top 15 Usuarios" /></p>
+<p><img src="/maria_herazo_trabajo-tercer_corte/assets/images/top_users_chart.png" alt="Top 15 Usuarios" /></p>
 
 <p><strong>Insight:</strong> Los usuarios <code class="language-plaintext highlighter-rouge">User_001</code>, <code class="language-plaintext highlighter-rouge">User_006</code> y <code class="language-plaintext highlighter-rouge">User_026</code> concentran la mayor actividad. Representan oportunidades de fidelización premium.</p>
 
 <h3 id="2-análisis-temporal-de-clicks">2. Análisis Temporal de Clicks</h3>
 
-<p><img src="/assets/images/temporal_analysis.png" alt="Análisis Temporal" /></p>
+<p><img src="/maria_herazo_trabajo-tercer_corte/assets/images/temporal_analysis.png" alt="Análisis Temporal" /></p>
 
 <p><strong>Patrón detectado:</strong> Se observan <strong>picos de actividad cada 5-10 minutos</strong>, lo que sugiere sesiones de navegación intermitente. Ideal para:</p>
 <ul>
@@ -109,13 +109,13 @@
 
 <h3 id="3-relación-clicks-vs-sesiones">3. Relación Clicks vs Sesiones</h3>
 
-<p><img src="/assets/images/clicks_vs_sessions.png" alt="Clicks vs Sesiones" /></p>
+<p><img src="/maria_herazo_trabajo-tercer_corte/assets/images/clicks_vs_sessions.png" alt="Clicks vs Sesiones" /></p>
 
 <p><strong>Hallazgo:</strong> Existe una correlación positiva entre número de sesiones y total de clicks. Usuarios con más de 30 sesiones tienden a convertir mejor.</p>
 
 <h3 id="4-distribución-de-usuarios">4. Distribución de Usuarios</h3>
 
-<p><img src="/assets/images/user_distribution.png" alt="Distribución de Usuarios" /></p>
+<p><img src="/maria_herazo_trabajo-tercer_corte/assets/images/user_distribution.png" alt="Distribución de Usuarios" /></p>
 
 <p><strong>Segmentación identificada:</strong></p>
 <ul>
@@ -126,7 +126,7 @@
 
 <h3 id="5-mapa-de-calor-de-actividad">5. Mapa de Calor de Actividad</h3>
 
-<p><img src="/assets/images/activity_heatmap.png" alt="Mapa de Calor" /></p>
+<p><img src="/maria_herazo_trabajo-tercer_corte/assets/images/activity_heatmap.png" alt="Mapa de Calor" /></p>
 
 <p><strong>Conclusión:</strong> La actividad se concentra entre las <strong>19:00-20:00 hrs</strong>, momento óptimo para campañas de marketing en tiempo real.</p>
 
